@@ -4,6 +4,14 @@
 
 **This code example demonstrates how to use the clock output feature which routes clock CLK_HF3 to an external pin.**
 
+## Requirements
+
+- [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) v3.0 or later (tested with v3.0)
+
+## Supported toolchains (make variable 'TOOLCHAIN')
+
+- GNU Arm&reg; Embedded Compiler v11.3.1 (`GCC_ARM`) – Default value of `TOOLCHAIN`
+
 ## Device
 
 The device used in this code example (CE) is:
@@ -12,7 +20,7 @@ The device used in this code example (CE) is:
 ## Board
 
 The board used for testing is:
-- TRAVEO™ T2G evaluation kit ([KIT_T2G-B-H_LITE](https://www.infineon.com/cms/en/product/evaluation-boards/kit_t2g-b-h_lite/))
+- TRAVEO™ T2G evaluation kit ([KIT_T2G-B-H_LITE](https://www.infineon.com/evaluation-board/KIT-T2G-B-H-LITE))
 
 ## Scope of work
 
@@ -26,12 +34,12 @@ The EXT_CLK pin is bi-directional. To utilize the EXT_CLK pin as an input, the p
 
 The clock source accessible through the EXT_CLK pin is clock CLK_HF3. This clock source has the flexibility to select from various internal clock sources, including the ECO (External Crystal Oscillator). It is important to note that CLK_HF3 is a resource that is shared among different components. Any alterations made to its settings will have an impact on all the connections utilizing this clock source.
 
-More details can be found in [Technical Reference Manual (TRM)](https://www.infineon.com/dgdl/?fileId=5546d4627600a6bc017600bfae720007), [Registers TRM](https://www.infineon.com/dgdl/?fileId=5546d4627600a6bc017600be2aef0004) and [Data Sheet](https://www.infineon.com/dgdl/?fileId=5546d46275b79adb0175dc8387f93228).
+More details of TRAVEO™ T2G CYT4BF Series can be found in Technical Reference Manual (TRM), Registers TRM and Data Sheet. (See the [here](https://www.infineon.com/products/microcontroller/32-bit-traveo-t2g-arm-cortex/for-body/t2g-cyt4bf#documents))
 
 ## Hardware setup
 
 This CE has been developed for:
-- TRAVEO™ T2G evaluation kit lite ([KIT_T2G-B-H_LITE](https://www.infineon.com/cms/en/product/evaluation-boards/kit_t2g-b-h_lite/))<BR>
+- TRAVEO™ T2G evaluation kit lite ([KIT_T2G-B-H_LITE](https://www.infineon.com/evaluation-board/KIT-T2G-B-E-LITE))<BR>
 <img src="./images/KIT_T2G-B-H_LITE.gif"/><BR>
 No changes are required from the board's default settings. Connect an oscilloscope to pin 8 of the J4 connector for the purpose of observing the EXT_CLK clock signal. Please refer to the board schematic for more details on the connector pinout.
 
@@ -99,7 +107,7 @@ Refer the section 18.3 of the TRM for more information on using the PLL.
 
 ## Run and Test
 
-For this example, a terminal emulator is required for displaying outputs and to change settings during runtime. Install a terminal emulator if you do not have one. Instructions in this document use [Tera Term](https://ttssh2.osdn.jp/index.html.en).
+For this example, a terminal emulator is required for displaying outputs and to change settings during runtime. Install a terminal emulator if you do not have one. Instructions in this document use [Tera Term](https://teratermproject.github.io/index-en.html).
 
 After code compilation, perform the following steps for flashing the device:
 1. Connect the board to your PC using the provided USB cable through the KitProg3 USB connector.
@@ -114,15 +122,15 @@ After code compilation, perform the following steps for flashing the device:
    
 5. Sending the value 0 switches the output frequency on the EXT_CLK pin to 16 MHz and value 1 makes the output 32 MHz.
 
-6. You can debug the example to step through the code. In the IDE, use the **[Project Name] Debug (KitProg3_MiniProg4)** configuration in the **Quick Panel**. For details, see the "Program and debug" section in the [Eclipse IDE for ModusToolbox™ software user guide](https://www.cypress.com/MTBEclipseIDEUserGuide).
+6. You can debug the example to step through the code. In the IDE, use the **[Project Name] Debug (KitProg3_MiniProg4)** configuration in the **Quick Panel**. For details, see the "Program and debug" section in the [Eclipse IDE for ModusToolbox™ software user guide](https://www.infineon.com/MTBEclipseIDEUserguide).
 
 **Note:** **(Only while debugging)** On the CM7 CPU, some code in *main()* may execute before the debugger halts at the beginning of *main()*. This means that some code executes twice: once before the debugger stops execution, and again after the debugger resets the program counter to the beginning of *main()*. See [KBA231071](https://community.cypress.com/docs/DOC-21143) to learn about this and for the workaround.
 
 ## References  
 
 Relevant Application notes are:
-- AN235305 - GETTING STARTED WITH TRAVEO™ T2G FAMILY MCUS IN MODUSTOOLBOX™
-- [AN224434](https://www.infineon.com/dgdl/?fileId=8ac78c8c7cdc391c017d0d3a71ec674a) - CLOCK CONFIGURATION SETUP IN TRAVEO™ T2G FAMILY CYT4B SERIES
+- [AN235305](https://www.infineon.com/assets/row/public/documents/10/42/infineon-an235305-getting-started-with-traveo-t2g-family-mcus-in-modustoolbox-applicationnotes-en.pdf?fileId=8ac78c8c8b6555fe018c1fddd8a72801) - GETTING STARTED WITH TRAVEO™ T2G FAMILY MCUS IN MODUSTOOLBOX™
+- [AN224434](https://www.infineon.com/gated/infineon-an224434-clock-configuration-setup-in-traveo-t2g-body-high-family-applicationnotes-en_80cf38a4-3eb2-43d9-b7fb-8ec94120dfd2) - CLOCK CONFIGURATION SETUP IN TRAVEO™ T2G BODY HIGH FAMILY
 
 ModusToolbox™ is available online:
 - <https://www.infineon.com/modustoolbox>
@@ -131,10 +139,10 @@ Associated TRAVEO™ T2G MCUs can be found on:
 - <https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/>
 
 More code examples can be found on the GIT repository:
-- [TRAVEO™ T2G Code examples](https://github.com/orgs/Infineon/repositories?q=mtb-t2g-&type=all&language=&sort=)
+- [TRAVEO™ T2G Code examples](https://github.com/orgs/Infineon/repositories?q=topic%3Akit-t2g-b-h-lite&type=all&language=&sort=) for [KIT_T2G-B-H_LITE](https://www.infineon.com/evaluation-board/KIT-T2G-B-H-LITE)
 
 For additional trainings, visit our webpage:  
-- [TRAVEO™ T2G trainings](https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/32-bit-traveo-t2g-arm-cortex-for-body/traveo-t2g-cyt4bf-series/#!trainings)
+- [TRAVEO™ T2G trainings](https://www.infineon.com/training/microcontroller-trainings)
 
 For questions and support, use the TRAVEO™ T2G Forum:  
 - <https://community.infineon.com/t5/TRAVEO-T2G/bd-p/TraveoII>  
